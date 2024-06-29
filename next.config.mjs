@@ -7,6 +7,11 @@ const nextConfig = {
           hostname: 'api.deezer.com',
           port: '',
         },
+        {
+          protocol: 'https',
+          hostname: 'e-cdns-images.dzcdn.net',
+          port: '',
+        },
       ],}
 };
 
