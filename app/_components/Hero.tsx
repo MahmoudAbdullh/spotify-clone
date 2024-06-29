@@ -7,7 +7,7 @@ type Props = {};
 const Hero = (props: Props) => {
   return (
     <div>
-      <nav className="px-[40px] py-[20px] flex justify-between">
+      <nav className="py-[20px] flex justify-between">
         <div className="flex items-center gap-5">
           <Image src={`/icons/back.png`} alt="home" width="40" height="40" />
           <Image src={`/icons/Forward.png`} alt="home" width="40" height="40" />
@@ -36,7 +36,7 @@ const Hero = (props: Props) => {
         </div>
       </nav>
       {/* main */}
-      <div className="px-[40px] py-[20px]">
+      <div className="py-[20px]">
         <h2 className="font-bold text-4xl mb-7">Good afternoon</h2>
         <div className="grid grid-cols-2 gap-x-8 gap-y-4">
           <RowAlbum
