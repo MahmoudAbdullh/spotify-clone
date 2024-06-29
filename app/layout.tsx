@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SideBar from "./_components/SideBar";
+import MusicPlayer from "./_components/MusicPlayer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex gap-2">
+        <div className="flex gap-2 pb-28">
           <SideBar />
           {children}
+          <MusicPlayer />
         </div>
       </body>
     </html>
