@@ -1,6 +1,12 @@
-import React from "react";
-
+"use client";
+import React, { useRef } from "react";
+import { useSoundStore } from "../_store/sound";
 const MusicPlayer = () => {
+  const sound = useSoundStore((state) => state.sound);
+  const closeButtonRef = useRef(null);
+  const AudioRef = useRef<HTMLAudioElement>(null);
+  console.log(sound);
+
   return (
     <div className="flex items-center justify-between bg-black p-4 text-white fixed bottom-0 left-0 right-0">
       <div className="flex items-center space-x-4">
@@ -33,6 +39,9 @@ const MusicPlayer = () => {
       </div>
       <div className="flex flex-col justify-center items-center gap-2">
         <div className="flex items-center space-x-6">
+          <audio controls src={sound} ref={AudioRef}></audio>
+        </div>
+        <div className="flex items-center space-x-6 hidden">
           <button>
             {/* Shuffle Icon */}
             <svg
@@ -108,7 +117,7 @@ const MusicPlayer = () => {
           </button>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 hidden">
           <span className="text-xs">2:39</span>
           <div className="w-48 lg:w-[631px] h-1 bg-gray-500 rounded-full">
             <div

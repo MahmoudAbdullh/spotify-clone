@@ -6,14 +6,15 @@ import { Track } from "../_types/Track";
 import RowAlbum from "../_components/RowAlbum";
 import CardAlbum from "../_components/CardAlbum";
 import ReactPaginate from "react-paginate";
+import { useSoundStore } from "../_store/sound";
 
 type Props = {};
 
 const Search = (props: Props) => {
-  const [audio, setaudio] = useState("");
+  const setSound = useSoundStore((state) => state.setSound);
   const [result, setResult] = useState<Track[]>([]);
   const [searchTxt, setsearchTxt] = useState("");
-  const [isloading, setIsloading] = useState(true);
+  const [isloading, setIsloading] = useState(false);
   //
   const [currentItems, setCurrentItems] = useState<Track[]>([]);
   const [pageCount, setPageCount] = useState(0);
@@ -53,8 +54,6 @@ const Search = (props: Props) => {
     setItemOffset(newOffset);
   };
 
-  console.log(result);
-
   return (
     <div className="grow">
       <Navbar>
@@ -65,11 +64,16 @@ const Search = (props: Props) => {
           value={searchTxt}
         />
       </Navbar>
+      {isloading && (
+        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-white">
+          <p className="text-black font-bold text-3xl">Loading...</p>
+        </div>
+      )}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-14 ">
         {currentItems?.map((t) => (
           <div
             onClick={() => {
-              setaudio(t.preview);
+              setSound(t.preview);
             }}
             key={t.id}
           >
