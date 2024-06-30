@@ -9,7 +9,7 @@ const Hero = () => {
       {/* main */}
       <div className="py-[20px]">
         <h2 className="font-bold text-4xl mb-7">Good afternoon</h2>
-        <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+        <div className="grid grid-cols-3 gap-x-8 gap-y-4">
           <RowAlbum
             title="Chill Mix"
             coverSrc="https://api.deezer.com/album/302127/image"

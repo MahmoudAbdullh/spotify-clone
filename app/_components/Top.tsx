@@ -1,16 +1,20 @@
 import React from "react";
 import CardAlbum from "./CardAlbum";
+import Link from "next/link";
 
 type TopProps = {
   title: string;
+  type: "mixes" | "foryou";
 };
 
-const Top = ({ title }: TopProps) => {
+const Top = ({ title, type }: TopProps) => {
   return (
     <div>
       <div className="flex justify-between mb-6">
         <h2 className="font-bold text-3xl">{title}</h2>
-        <span className="font-bold text-base text-[#ADADAD]">SEE ALL</span>
+        <Link href={`/all?type=${type}`}>
+          <span className="font-bold text-base text-[#ADADAD]">SEE ALL</span>
+        </Link>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-14 ">
         <CardAlbum

@@ -5,7 +5,6 @@ const MusicPlayer = () => {
   const sound = useSoundStore((state) => state.sound);
   const closeButtonRef = useRef(null);
   const AudioRef = useRef<HTMLAudioElement>(null);
-  console.log(sound);
 
   return (
     <div className="flex items-center justify-between bg-black p-4 text-white fixed bottom-0 left-0 right-0">
@@ -23,7 +22,7 @@ const MusicPlayer = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g clip-path="url(#clip0_428_1669)">
+            <g clipPath="url(#clip0_428_1669)">
               <path
                 d="M14.0009 6.03963C16.4673 3.74352 20.2787 3.81973 22.6548 6.28786C25.0299 8.75708 25.1118 12.6895 22.9026 15.2546L13.9988 24.5L5.09703 15.2546C2.88787 12.6895 2.97082 8.75055 5.34482 6.28786C7.72303 3.823 11.5271 3.74025 14.0009 6.03963Z"
                 fill="#63CF6C"

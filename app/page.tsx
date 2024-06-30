@@ -12,9 +12,9 @@ export default function Home() {
     >
       <Hero />
       {/* top mixes */}
-      <Top title="Top mixes" />
+      <Top title="Top mixes" type="mixes" />
       {/* Made for you */}
-      <Top title="Made for you" />
+      <Top title="Made for you" type="foryou" />
     </main>
   );
 }
