@@ -1,6 +1,5 @@
-import Image from "next/image";
+"use client";
 import Hero from "./_components/Hero";
-import CardAlbum from "./_components/CardAlbum";
 import Top from "./_components/Top";
 
 export default function Home() {
