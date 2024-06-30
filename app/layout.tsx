@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SideBar from "./_components/SideBar";
 import MusicPlayer from "./_components/MusicPlayer";
-
+import { Suspense } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,9 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="flex gap-2 pb-28">
-          <SideBar />
-          {children}
-          <MusicPlayer />
+          <Suspense>
+            <SideBar />
+            {children}
+            <MusicPlayer />
+          </Suspense>
         </div>
       </body>
     </html>
